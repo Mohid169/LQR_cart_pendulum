@@ -1,6 +1,6 @@
 #include "cart.hpp"
 
-
+// Header file for cart
 Cart::Cart(double mass, double position, double velocity)
     : mass(mass), position(position), velocity(velocity) {}
 
