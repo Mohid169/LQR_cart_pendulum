@@ -43,6 +43,8 @@ public:
      *
      * @return The position of the cart.
      */
+
+    
     double getCartPosition() const;
 
     /**
@@ -51,6 +53,42 @@ public:
      * @return The angle of the pendulum.
      */
     double getPendulumAngle() const;
+
+     /* @brief Calculate acceleration of the cart.
+     *
+     * @param controlForce The force applied to the cart.
+     * @param theta Angle of the pendulum.
+     * @param theta_dot Angular velocity of the pendulum.
+     * @param x Position of the cart.
+     * @param x_dot Velocity of the cart.
+     * @return The acceleration of the cart.
+     */
+    double calculateCartAcceleration(double controlForce, double theta, double theta_dot, double x, double x_dot) const; 
+
+       /**
+     * @brief Calculate velocity of the pendulum.
+     *
+     * @param theta_dot Angular velocity of the pendulum.
+     * @return The velocity of the pendulum.
+     */
+    double calculatePendulumVelocity(double theta_dot) const;
+    /**
+     * @brief Calculate acceleration of the pendulum.
+     *
+     * @param theta Angle of the pendulum.
+     * @param theta_dot Angular velocity of the pendulum.
+     * @return The acceleration of the pendulum.
+     */
+ /**
+     * @brief Calculate the angular acceleration of the pendulum.
+     *
+     * @param theta The angle of the pendulum.
+     * @param theta_dot The angular velocity of the pendulum.
+     * @param x_double_dot The acceleration of the cart.
+     * @return The angular acceleration of the pendulum.
+     */
+    double calculateThetaAcceleration(double theta, double theta_dot, double x_double_dot) const;
+
 
      // Setters for initial conditions
     void setX(double value);
