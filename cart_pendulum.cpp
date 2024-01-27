@@ -34,6 +34,24 @@ void CartPendulum::update(double controlForce){
     theta += theta_dot * dt;
 }
 
+double CartPendulum::getCartPosition() const {
+    return x;
+}
+
+double CartPendulum::getPendulumAngle() const{
+    return theta;
+}
+
+double CartPendulum::calculateCartAcceleration(double controlForce, double theta, double theta_dot, double x, double x_dot) const {
+    return  (controlForce + m * l * theta_dot * theta_dot * sin(theta)) / (M + m); 
+}
+
+double CartPendulum::calculateThetaAcceleration(double theta, double theta_dot, double x_double_dot) const {
+    // Update the dynamics based on the provided equation
+    return (x_double_dot * cos(theta) + g * sin(theta)) / l;
+}
+
+
 // Setter implementations
 void CartPendulum::setX(double value) {
     x = value;
