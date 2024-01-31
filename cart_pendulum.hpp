@@ -1,4 +1,3 @@
-#inndef CART_PENDULUM_HPP
 #define CART_PENDULUM_HPP
 
 /**
@@ -32,11 +31,15 @@ public:
     CartPendulum(double cartMass, double pendulumMass, double pendulumLength);
 
     /**
-     * @brief Update the state of the system based on a control force.
+     * @brief Update the state of the system based on the RK4 integration scheme.
      *
+     * @param dt Time step.
      * @param controlForce The force applied to the cart.
+     * @param k1_x_dot, k2_x_dot, k3_x_dot, k4_x_dot Intermediate values for cart velocity.
+     * @param k1_theta_dot, k2_theta_dot, k3_theta_dot, k4_theta_dot Intermediate values for pendulum angular velocity.
      */
-    void update(double controlForce);
+    void update(double dt, double controlForce, double k1_x_dot, double k2_x_dot, double k3_x_dot, double k4_x_dot,
+                double k1_theta_dot, double k2_theta_dot, double k3_theta_dot, double k4_theta_dot);
 
     /**
      * @brief Get the position of the cart along the x-axis.
@@ -90,6 +93,21 @@ public:
     double calculateThetaAcceleration(double theta, double theta_dot, double x_double_dot) const;
 
 
+    /**
+     * @brief Get the angular velocity of the pendulum.
+     *
+     * @return The angular velocity of the pendulum.
+     */
+    double getThetaDot() const;
+
+    /**
+     * @brief Get the velocity of the cart.
+     *
+     * @return The velocity of the cart.
+     */
+    double getCartVelocity() const;
+
+
      // Setters for initial conditions
     void setX(double value);
     void setZ(double value);
@@ -99,4 +117,3 @@ public:
     void setThetaDot(double value);
 };
 
-#endif // CART_PENDULUM_HPP
