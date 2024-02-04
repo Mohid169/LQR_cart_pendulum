@@ -8,7 +8,7 @@ const double dt=.01;
 
 
 //Constructor for CartPendulum class
-CartPendulum::CartPendulum(double cartMass, double pendulumMass, double pendulumLength)
+CartPendulum::CartPendulum(const double cartMass, const double pendulumMass, const double pendulumLength)
     : M(cartMass), m(pendulumMass), l(pendulumLength),
       x(0.0), z(pendulumLength), theta(0.1), x_dot(0.0), z_dot(0.0), theta_dot(0.0) {}
 
