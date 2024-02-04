@@ -63,9 +63,6 @@ double CartPendulum::calculateThetaAcceleration(double theta, double theta_dot, 
 }
 
 
-
-
-
 // Setter implementations
 void CartPendulum::setX(double value) {
     x = value;
