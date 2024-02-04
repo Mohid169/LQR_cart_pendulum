@@ -30,7 +30,7 @@ public:
      * @param pendulumMass Mass of the pendulum.
      * @param pendulumLength Length of the pendulum.
      */
-    CartPendulum(double cartMass, double pendulumMass, double pendulumLength);
+    CartPendulum(const double cartMass, const double pendulumMass, const double pendulumLength);
 
     /**
      * @brief Update the state of the system based on the RK4 integration scheme.
