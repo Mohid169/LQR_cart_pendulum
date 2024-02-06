@@ -11,6 +11,7 @@ void drawWheels(double cartPosition) {
 }
 
 
+
 int main() {
     // System parameters
     const double cartMass = 1.0;
@@ -41,6 +42,7 @@ int main() {
 
 
     // Animation loop
+
     for (int i = 0; i < numSteps; ++i) {
         // Run RK4 integration
         runRK4(system, controlForce);
@@ -56,12 +58,17 @@ int main() {
         plt::plot({cartLeft, cartRight, cartRight, cartLeft, cartLeft},
                   {0, 0, cartHeight, cartHeight, 0}, "b-");
 
-        // Plot the pendulum
+        //add a string 
         double pendulumX = system.getCartPosition();
         double pendulumY = 0.0;
+        double pendulumStringX = pendulumX + pendulumLength * sin(system.getPendulumAngle());
+        double pendulumStringY = pendulumY - pendulumLength * cos(system.getPendulumAngle());
+        plt::plot({pendulumX, pendulumStringX}, {pendulumY, pendulumStringY}, "k-");
+
+        // Plot the pendulum
         double pendulumTopX = pendulumX + pendulumLength * sin(system.getPendulumAngle());
         double pendulumTopY = pendulumY - pendulumLength * cos(system.getPendulumAngle());
-        plt::plot({pendulumX, pendulumTopX}, {pendulumY, pendulumTopY}, "r-");
+        plt::plot({pendulumX, pendulumTopX}, {pendulumY, pendulumTopY}, "ro");
 
         // Draw wheels
         drawWheels(system.getCartPosition());
