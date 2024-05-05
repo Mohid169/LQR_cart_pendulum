@@ -22,7 +22,7 @@ int main() {
     CartPendulum system(cartMass, pendulumMass, pendulumLength);
 
     // Simulation parameters
-    double controlForce = 100;
+    double controlForce = 0;
     const double dt = 0.01;
     const double simulationTime = 2.0;
 
@@ -31,24 +31,16 @@ int main() {
 
     // Set up plot
     plt::figure_size(600, 600);
-   // plt::ion();  // Turn on interactive mode
- // Set plot limits
-         plt::axis("equal");
-
- const double minY = -1.5;
- const double maxY =1.5;
-
+    plt::axis("equal");
+    const double minY = -1.5;
+    const double maxY = 1.5;
     plt::ylim(minY, maxY);
-
-
+    
     // Animation loop
-
     for (int i = 0; i < numSteps; ++i) {
-        // Run RK4 integration
-        runRK4(system, controlForce);
-
         // Clear the previous plot
-        plt::clf();
+        
+        system.update(controlForce, dt);
 
         // Plot the cart
         double cartWidth = 0.5; // Adjust the width of the rectangle as needed
@@ -58,40 +50,38 @@ int main() {
         plt::plot({cartLeft, cartRight, cartRight, cartLeft, cartLeft},
                   {0, 0, cartHeight, cartHeight, 0}, "b-");
 
-        //add a string 
-        double pendulumX = system.getCartPosition();
-        double pendulumY = 0.0;
-        double pendulumStringX = pendulumX + pendulumLength * sin(system.getPendulumAngle());
-        double pendulumStringY = pendulumY - pendulumLength * cos(system.getPendulumAngle());
-        plt::plot({pendulumX, pendulumStringX}, {pendulumY, pendulumStringY}, "k-");
-
         // Plot the pendulum
-        double pendulumTopX = pendulumX + pendulumLength * sin(system.getPendulumAngle());
-        double pendulumTopY = pendulumY - pendulumLength * cos(system.getPendulumAngle());
-        plt::plot({pendulumX, pendulumTopX}, {pendulumY, pendulumTopY}, "ro");
+       // Plot the pendulum
+double pendulumX = system.getCartPosition();
+double pendulumY = 0.0;
+// Adjust the angle for plotting (assuming 0 radians corresponds to pi/2 in dynamics)
+double adjustedAngle = system.getPendulumAngle() +M_PI / 2.0;
+double pendulumStringX = pendulumX + pendulumLength * cos(adjustedAngle);
+double pendulumStringY = pendulumY + pendulumLength * sin(adjustedAngle);
+plt::plot({pendulumX, pendulumStringX}, {pendulumY, pendulumStringY}, "k-");
+
+// Plot the pendulum mass
+std::vector<double> pendulumStringXVec = {pendulumStringX};
+std::vector<double> pendulumStringYVec = {pendulumStringY};
+plt::plot(pendulumStringXVec, pendulumStringYVec, "ro");
+
+
 
         // Draw wheels
         drawWheels(system.getCartPosition());
 
-       
         // Add labels and title
         plt::title("Cart-Pendulum Animation");
         plt::xlabel("Cart Position");
         plt::ylabel("Pendulum Height");
-          plt::xlim(system.getCartPosition() - 1.5, system.getCartPosition() + 1.5);
 
-        //std::cout << "Pendulum Length at Step " << i << ": " << pendulumLength << std::endl;
-
-        // Pause to create animation effect
-              plt::ylim(minY, maxY);
-                    
-
-
+        // Set the animation speed
         plt::pause(0.01);
-              plt::ylim(minY, maxY);
 
-
+       // std::cout<<system.getPendulumAngle()<<std::endl;
     }
+
+    // Display the final plot
     plt::show();
 
     return 0;

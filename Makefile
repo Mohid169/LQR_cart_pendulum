@@ -204,33 +204,6 @@ rk4_integrator.cpp.s:
 	$(MAKE) -f CMakeFiles/CartPendulumSimulator.dir/build.make CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.s
 .PHONY : rk4_integrator.cpp.s
 
-simulator.o: simulator.cpp.o
-
-.PHONY : simulator.o
-
-# target to build an object file
-simulator.cpp.o:
-	$(MAKE) -f CMakeFiles/CartPendulumSimulator.dir/build.make CMakeFiles/CartPendulumSimulator.dir/simulator.cpp.o
-.PHONY : simulator.cpp.o
-
-simulator.i: simulator.cpp.i
-
-.PHONY : simulator.i
-
-# target to preprocess a source file
-simulator.cpp.i:
-	$(MAKE) -f CMakeFiles/CartPendulumSimulator.dir/build.make CMakeFiles/CartPendulumSimulator.dir/simulator.cpp.i
-.PHONY : simulator.cpp.i
-
-simulator.s: simulator.cpp.s
-
-.PHONY : simulator.s
-
-# target to generate assembly for a file
-simulator.cpp.s:
-	$(MAKE) -f CMakeFiles/CartPendulumSimulator.dir/build.make CMakeFiles/CartPendulumSimulator.dir/simulator.cpp.s
-.PHONY : simulator.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -249,9 +222,6 @@ help:
 	@echo "... rk4_integrator.o"
 	@echo "... rk4_integrator.i"
 	@echo "... rk4_integrator.s"
-	@echo "... simulator.o"
-	@echo "... simulator.i"
-	@echo "... simulator.s"
 .PHONY : help
 
 

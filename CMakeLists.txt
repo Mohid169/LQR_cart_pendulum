@@ -9,7 +9,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_executable(CartPendulumSimulator
     cart_pendulum.cpp
     rk4_integrator.cpp
-    simulator.cpp
+  
     main.cpp
 
 )

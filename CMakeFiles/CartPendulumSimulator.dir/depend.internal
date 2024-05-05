@@ -115,5 +115,3 @@ CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.o
  /home/mohid.khan/LQR_pendulum/cart_pendulum.hpp
  /home/mohid.khan/LQR_pendulum/rk4_integrator.cpp
  /home/mohid.khan/LQR_pendulum/rk4_integrator.hpp
-CMakeFiles/CartPendulumSimulator.dir/simulator.cpp.o
- /home/mohid.khan/LQR_pendulum/simulator.cpp
