@@ -39,7 +39,7 @@ int main() {
     // Animation loop
     for (int i = 0; i < numSteps; ++i) {
         // Clear the previous plot
-        
+        plt::clf();
         system.update(controlForce, dt);
 
         // Plot the cart

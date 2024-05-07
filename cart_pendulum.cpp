@@ -10,7 +10,7 @@ const double g=9.81;
 //Constructor for CartPendulum class
 CartPendulum::CartPendulum(const double cartMass, const double pendulumMass, const double pendulumLength)
     : M(cartMass), m(pendulumMass), l(pendulumLength),
-      x(0.0), z(pendulumLength), theta(0.00), x_dot(0.0), z_dot(0.0), theta_dot(0.0) {}
+      x(0.0), z(pendulumLength), theta(0.11), x_dot(0.0), z_dot(0.0), theta_dot(0.0) {}
 
  
  void CartPendulum::update(double controlForce, double dt){
@@ -50,17 +50,19 @@ double CartPendulum::getPendulumAngle() const{
 
 double CartPendulum::calculateCartAcceleration(double controlForce, double theta, double theta_dot, double x, double x_dot) const {
     // Calculate cart acceleration (x_double_dot)
-    double numerator = -1.0*m * l * sin(theta) * pow(theta_dot, 2) + m * g * sin(theta) * cos(theta) + controlForce;
-    double denominator = (M + m) * (pow(sin(theta), 2));
-    std::cout<<denominator<<std::endl;
+    double numerator = controlForce + m*sin(theta)*(l*pow(theta_dot,2)+g*cos(theta));
+    double denominator = M + m* (pow(sin(theta), 2));
+    std::cout<<"x_accel: ";
+    std::cout<<numerator/denominator<<std::endl;
     return numerator / denominator;
 }
 
 double CartPendulum::calculateThetaAcceleration(double theta, double theta_dot, double x_double_dot, double controlForce) const {
     // Update the dynamics based on the provided equation
-    double numerator =-1.0*m * l * sin(theta) * cos(theta) * pow(theta_dot, 2) + (M + m) * g * sin(theta) - cos(theta) * controlForce;
-    double denominator = (M + m) * pow(sin(theta), 2) * l;
-        std::cout<<denominator<<std::endl;
+    double numerator = -1.0*controlForce*cos(theta) - m*l*pow(theta_dot,2 )*cos(theta)*sin(theta) - (M+m)*g*sin(theta);
+    double denominator = (M + m * pow(sin(theta), 2)) * l;
+    std::cout<<"theta accel";
+    std::cout<<numerator/denominator<<std::endl;
 
     return numerator / denominator;
 }
