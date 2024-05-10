@@ -40,8 +40,10 @@ public:
      * @param k1_x_dot, k2_x_dot, k3_x_dot, k4_x_dot Intermediate values for cart velocity.
      * @param k1_theta_dot, k2_theta_dot, k3_theta_dot, k4_theta_dot Intermediate values for pendulum angular velocity.
      */
-    void update(double dt, double controlForce, double k1_x_dot, double k2_x_dot, double k3_x_dot, double k4_x_dot,
-                double k1_theta_dot, double k2_theta_dot, double k3_theta_dot, double k4_theta_dot);
+    // void RK_44update(double dt, double controlForce, double k1_x_dot, double k2_x_dot, double k3_x_dot, double k4_x_dot,
+    //             double k1_theta_dot, double k2_theta_dot, double k3_theta_dot, double k4_theta_dot);
+
+    void update(double controlForce,double dt);
 
     /**
      * @brief Get the position of the cart along the x-axis.
@@ -85,7 +87,7 @@ public:
      * @param x_double_dot The acceleration of the cart.
      * @return The angular acceleration of the pendulum.
      */
-    double calculateThetaAcceleration(double theta, double theta_dot, double x_double_dot) const;
+    double calculateThetaAcceleration(double theta, double theta_dot, double x_double_dot, double controlForce) const;
 
 
     /**

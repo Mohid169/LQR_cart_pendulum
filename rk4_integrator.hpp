@@ -7,5 +7,5 @@
 
 
 // Function to perform RK4 integration for the CartPendulum system
-void runRK4(CartPendulum& system, double controlForce);
+// void runRK4(CartPendulum& system, double controlForce);
 #endif // RK4_INTEGRATOR_HPP

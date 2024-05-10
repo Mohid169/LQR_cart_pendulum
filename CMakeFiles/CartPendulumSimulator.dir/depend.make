@@ -115,5 +115,3 @@ CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.o: cart_pendulum.hpp
 CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.o: rk4_integrator.cpp
 CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.o: rk4_integrator.hpp
 
-CMakeFiles/CartPendulumSimulator.dir/simulator.cpp.o: simulator.cpp
-

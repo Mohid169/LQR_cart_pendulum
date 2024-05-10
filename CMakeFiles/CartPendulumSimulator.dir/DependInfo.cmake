@@ -7,7 +7,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/mohid.khan/LQR_pendulum/cart_pendulum.cpp" "/home/mohid.khan/LQR_pendulum/CMakeFiles/CartPendulumSimulator.dir/cart_pendulum.cpp.o"
   "/home/mohid.khan/LQR_pendulum/main.cpp" "/home/mohid.khan/LQR_pendulum/CMakeFiles/CartPendulumSimulator.dir/main.cpp.o"
   "/home/mohid.khan/LQR_pendulum/rk4_integrator.cpp" "/home/mohid.khan/LQR_pendulum/CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.o"
-  "/home/mohid.khan/LQR_pendulum/simulator.cpp" "/home/mohid.khan/LQR_pendulum/CMakeFiles/CartPendulumSimulator.dir/simulator.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
