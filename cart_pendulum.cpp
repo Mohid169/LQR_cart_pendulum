@@ -4,8 +4,9 @@
 
 //Constants
 const double g=9.81;
-
-
+// TO DO LIST: 
+// (1) Refactor CODE - change function calls, remove z parameters
+// (2) Re-derive math 
 
 //Constructor for CartPendulum class
 CartPendulum::CartPendulum(const double cartMass, const double pendulumMass, const double pendulumLength)
