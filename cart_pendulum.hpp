@@ -87,7 +87,7 @@ public:
      * @param x_double_dot The acceleration of the cart.
      * @return The angular acceleration of the pendulum.
      */
-    double calculateThetaAcceleration(double theta, double theta_dot, double x_double_dot, double controlForce) const;
+    double calculateThetaAcceleration(double controlForce, double theta, double theta_dot, double x_double_dot) const;
 
 
     /**
