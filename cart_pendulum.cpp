@@ -4,21 +4,21 @@
 
 //Constants
 const double g=9.81;
-// TO DO LIST: 
+// TO DO LIST: ii
 // (1) Refactor CODE - change function calls, remove z parameters
 // (2) Re-derive math 
 
 //Constructor for CartPendulum class
 CartPendulum::CartPendulum(const double cartMass, const double pendulumMass, const double pendulumLength)
     : M(cartMass), m(pendulumMass), l(pendulumLength),
-      x(0.0), z(pendulumLength), theta(0), x_dot(0.0), z_dot(0.0), theta_dot(0.0) {}
+      x(0.0), z(pendulumLength), theta(M_PI/2), x_dot(0.0), z_dot(0.0), theta_dot(0.0) {}
 
 //delete 'z' parameter, not used for anything
  
  void CartPendulum::update(double controlForce, double dt){
     double x_double_dot =  calculateCartAcceleration(controlForce, theta, theta_dot, x, x_dot); 
     //Change function signature to be not shit
-    double theta_double_dot = calculateThetaAcceleration(theta,  theta_dot, x_double_dot, controlForce);
+    double theta_double_dot = calculateThetaAcceleration(controlForce, theta,  theta_dot, x_double_dot);
 
      // Update velocities using Euler integration
     x_dot += x_double_dot * dt;
@@ -53,14 +53,15 @@ double CartPendulum::getPendulumAngle() const{
 
 double CartPendulum::calculateCartAcceleration(double controlForce, double theta, double theta_dot, double x, double x_dot) const {
     // Calculate cart acceleration (x_double_dot)
-    double numerator = controlForce - m*sin(theta)*(l*pow(theta_dot,2)-g*cos(theta));
+    double numerator = controlForce + m*g*sin(theta)*cos(theta)-m*l*sin(theta)*pow(theta_dot,2);
+
     double denominator = M - m* (pow(sin(theta), 2));
     std::cout<<"x_accel: ";
     std::cout<<numerator/denominator<<std::endl;
     return numerator / denominator;
 }
 
-double CartPendulum::calculateThetaAcceleration(double theta, double theta_dot, double x_double_dot, double controlForce) const {
+double CartPendulum::calculateThetaAcceleration(double controlForce, double theta, double theta_dot, double x_double_dot) const {
     // Update the dynamics based on the provided equation
     double numerator = 1.0*controlForce*cos(theta) - m*l*pow(theta_dot,2 )*cos(theta)*sin(theta) + (M+m)*g*sin(theta);
     double denominator = (M - m * pow(sin(theta), 2)) * l;
