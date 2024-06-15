@@ -26,7 +26,7 @@ B = np.array([
 
 #Define the weighing matrices
 Q = np.diag([1, 1, 10, 10])
-R = np.array([[0.1]]) # I care about smiooth control inputs
+R = np.array([[0.1]]) # I care about smooth control inputs
 
 K = control.lqr(A,B, Q,R) 
 print("Gain matrix: ")

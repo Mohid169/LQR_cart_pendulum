@@ -1,6 +1,8 @@
 
 #ifndef CART_PENDULUM_HPP
 #define CART_PENDULUM_HPP
+#include <Eigen/Dense>
+
 
 /**
  * @brief Represents a cart-pendulum system.
@@ -19,7 +21,6 @@ private:
     double z; // Vertical position of the pendulum's center of mass.
     double theta; // < Angle of the pendulum.
     double x_dot; // Velocity of the cart.
-    double z_dot; // Velocity of the pendulum's center of mass.
     double theta_dot; //< Angular velocity of the pendulum.
 
 public:
@@ -103,6 +104,8 @@ public:
      * @return The velocity of the cart.
      */
     double getCartVelocity() const;
+
+    Eigen::VectorXd getStateObjects() const;
 
 
      // Setters for initial conditions

@@ -40,6 +40,7 @@ int main() {
     for (int i = 0; i < numSteps; ++i) {
         // Clear the previous plot
         plt::clf();
+        //compute input function controlForce = controller(system.state_objects)
         system.update(controlForce, dt);
 
         // Plot the cart
