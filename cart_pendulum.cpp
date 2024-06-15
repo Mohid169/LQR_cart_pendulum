@@ -4,9 +4,7 @@
 
 //Constants
 const double g=9.81;
-// TO DO LIST: ii
-// (1) Refactor CODE - change function calls, remove z parameters
-// (2) Re-derive math 
+
 
 //Constructor for CartPendulum class
 CartPendulum::CartPendulum(const double cartMass, const double pendulumMass, const double pendulumLength)
@@ -30,6 +28,12 @@ CartPendulum::CartPendulum(const double cartMass, const double pendulumMass, con
 
 
  };
+
+ Eigen::VectorXd CartPendulum::getStateObjects() const{
+     Eigen::VectorXd stateOjects(4);
+     << x, theta, x_dot, theta_dot; 
+     return stateObjects;
+ }
 
 
 
@@ -99,21 +103,3 @@ void CartPendulum::setThetaDot(double value) {
 
 
 
-// void CartPendulum::RK_4update(double dt, double controlForce,
-//                           double k1_x_dot, double k2_x_dot, double k3_x_dot, double k4_x_dot,
-//                           double k1_theta_dot, double k2_theta_dot, double k3_theta_dot, double k4_theta_dot) {
-//     // Step 1
-//     double x_dot_avg = (k1_x_dot + 2.0 * k2_x_dot + 2.0 * k3_x_dot + k4_x_dot) / 6.0;
-//     double theta_dot_avg = (k1_theta_dot + 2.0 * k2_theta_dot + 2.0 * k3_theta_dot + k4_theta_dot) / 6.0;
-
-//       // Update position and velocity of the cart
-//     x_dot += x_dot_avg * dt;
-//     x += x_dot * dt;
-//     // Equations of motion for the pendulum
-//     //double pendulumForce = -m * l * theta_dot_avg * theta_dot_avg * sin(theta);
-//     theta_dot += theta_dot_avg * dt;  // Update angular velocity
-//     theta += theta_dot * dt;  // Update angle
-
-//     std::cout<<theta<<std::endl;
-//     std::cout<<x<<std::endl;
-// }
