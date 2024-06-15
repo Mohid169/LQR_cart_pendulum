@@ -6,5 +6,5 @@ CXX_FLAGS =   -std=gnu++11
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/mohid.khan/LQR_pendulum/matplotlib-cpp -isystem /usr/include/python3.8 -isystem /home/mohid.khan/.local/lib/python3.8/site-packages/numpy/core/include 
+CXX_INCLUDES = -I/usr/include/eigen3 -I/home/mohid.khan/LQR_pendulum/matplotlib-cpp -isystem /usr/include/python3.8 -isystem /home/mohid.khan/.local/lib/python3.8/site-packages/numpy/core/include 
 

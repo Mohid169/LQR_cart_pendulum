@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/CartPendulumSimulator.dir/cart_pendulum.cpp.o"
+  "CMakeFiles/CartPendulumSimulator.dir/controller.cpp.o"
   "CMakeFiles/CartPendulumSimulator.dir/main.cpp.o"
-  "CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.o"
   "CartPendulumSimulator"
   "CartPendulumSimulator.pdb"
 )

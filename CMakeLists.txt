@@ -4,12 +4,13 @@ project(CartPendulumSimulator)
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
-
+# Find Eigen
+find_package(Eigen3 REQUIRED)
+include_directories(${EIGEN3_INCLUDE_DIR})
 # Add executable
 add_executable(CartPendulumSimulator
     cart_pendulum.cpp
-    rk4_integrator.cpp
-  
+    controller.cpp
     main.cpp
 
 )

@@ -70,18 +70,18 @@ CMakeFiles/CartPendulumSimulator.dir/cart_pendulum.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CartPendulumSimulator.dir/cart_pendulum.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohid.khan/LQR_pendulum/cart_pendulum.cpp -o CMakeFiles/CartPendulumSimulator.dir/cart_pendulum.cpp.s
 
-CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.o: CMakeFiles/CartPendulumSimulator.dir/flags.make
-CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.o: rk4_integrator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohid.khan/LQR_pendulum/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.o -c /home/mohid.khan/LQR_pendulum/rk4_integrator.cpp
+CMakeFiles/CartPendulumSimulator.dir/controller.cpp.o: CMakeFiles/CartPendulumSimulator.dir/flags.make
+CMakeFiles/CartPendulumSimulator.dir/controller.cpp.o: controller.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/mohid.khan/LQR_pendulum/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/CartPendulumSimulator.dir/controller.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CartPendulumSimulator.dir/controller.cpp.o -c /home/mohid.khan/LQR_pendulum/controller.cpp
 
-CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohid.khan/LQR_pendulum/rk4_integrator.cpp > CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.i
+CMakeFiles/CartPendulumSimulator.dir/controller.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CartPendulumSimulator.dir/controller.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/mohid.khan/LQR_pendulum/controller.cpp > CMakeFiles/CartPendulumSimulator.dir/controller.cpp.i
 
-CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohid.khan/LQR_pendulum/rk4_integrator.cpp -o CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.s
+CMakeFiles/CartPendulumSimulator.dir/controller.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CartPendulumSimulator.dir/controller.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/mohid.khan/LQR_pendulum/controller.cpp -o CMakeFiles/CartPendulumSimulator.dir/controller.cpp.s
 
 CMakeFiles/CartPendulumSimulator.dir/main.cpp.o: CMakeFiles/CartPendulumSimulator.dir/flags.make
 CMakeFiles/CartPendulumSimulator.dir/main.cpp.o: main.cpp
@@ -99,14 +99,14 @@ CMakeFiles/CartPendulumSimulator.dir/main.cpp.s: cmake_force
 # Object files for target CartPendulumSimulator
 CartPendulumSimulator_OBJECTS = \
 "CMakeFiles/CartPendulumSimulator.dir/cart_pendulum.cpp.o" \
-"CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.o" \
+"CMakeFiles/CartPendulumSimulator.dir/controller.cpp.o" \
 "CMakeFiles/CartPendulumSimulator.dir/main.cpp.o"
 
 # External object files for target CartPendulumSimulator
 CartPendulumSimulator_EXTERNAL_OBJECTS =
 
 CartPendulumSimulator: CMakeFiles/CartPendulumSimulator.dir/cart_pendulum.cpp.o
-CartPendulumSimulator: CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.o
+CartPendulumSimulator: CMakeFiles/CartPendulumSimulator.dir/controller.cpp.o
 CartPendulumSimulator: CMakeFiles/CartPendulumSimulator.dir/main.cpp.o
 CartPendulumSimulator: CMakeFiles/CartPendulumSimulator.dir/build.make
 CartPendulumSimulator: /usr/lib/x86_64-linux-gnu/libpython3.8.so

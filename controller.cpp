@@ -15,4 +15,5 @@ Controller::Controller() {
 Controller::~Controller() {};
 
 //Function to compute control force based on current state
-double Controller::computeControlForce(const Eigen::Vector)
+double Controller::computeControlForce(const Eigen::VectorXd& state) const {
+}
