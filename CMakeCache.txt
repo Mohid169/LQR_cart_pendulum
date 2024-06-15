@@ -20,6 +20,10 @@ CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 
+//For backwards compatibility, what version of CMake commands and
+// syntax should this version of CMake try to support.
+CMAKE_BACKWARDS_COMPATIBILITY:STRING=2.4
+
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
 CMAKE_BUILD_TYPE:STRING=
@@ -214,6 +218,15 @@ CartPendulumSimulator_BINARY_DIR:STATIC=/home/mohid.khan/LQR_pendulum
 
 //Value Computed by CMake
 CartPendulumSimulator_SOURCE_DIR:STATIC=/home/mohid.khan/LQR_pendulum
+
+//Single output directory for building all executables.
+EXECUTABLE_OUTPUT_PATH:PATH=
+
+//The directory containing a CMake configuration file for Eigen3.
+Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
+
+//Single output directory for building all libraries.
+LIBRARY_OUTPUT_PATH:PATH=
 
 //Path to a library.
 Python3_LIBRARY_DEBUG:FILEPATH=

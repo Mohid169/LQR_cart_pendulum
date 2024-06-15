@@ -9,7 +9,7 @@ const double g=9.81;
 //Constructor for CartPendulum class
 CartPendulum::CartPendulum(const double cartMass, const double pendulumMass, const double pendulumLength)
     : M(cartMass), m(pendulumMass), l(pendulumLength),
-      x(0.0), z(pendulumLength), theta(0), x_dot(0.0), z_dot(0.0), theta_dot(0.0) {}
+      x(0.0), z(pendulumLength), theta(0), x_dot(0.0), theta_dot(0.0) {}
 
 //delete 'z' parameter, not used for anything
  
@@ -30,8 +30,8 @@ CartPendulum::CartPendulum(const double cartMass, const double pendulumMass, con
  };
 
  Eigen::VectorXd CartPendulum::getStateObjects() const{
-     Eigen::VectorXd stateOjects(4);
-     << x, theta, x_dot, theta_dot; 
+     Eigen::VectorXd stateObjects(4);
+     stateObjects << x, theta, x_dot, theta_dot; 
      return stateObjects;
  }
 
@@ -81,9 +81,6 @@ void CartPendulum::setX(double value) {
     x = value;
 }
 
-void CartPendulum::setZ(double value) {
-    z = value;
-}
 
 void CartPendulum::setTheta(double value) {
     theta = value;
@@ -93,9 +90,6 @@ void CartPendulum::setXDot(double value) {
     x_dot = value;
 }
 
-void CartPendulum::setZDot(double value) {
-    z_dot = value;
-}
 
 void CartPendulum::setThetaDot(double value) {
     theta_dot = value;

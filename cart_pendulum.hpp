@@ -110,7 +110,6 @@ public:
 
      // Setters for initial conditions
     void setX(double value);
-    void setZ(double value);
     void setTheta(double value);
     void setXDot(double value);
     void setZDot(double value);

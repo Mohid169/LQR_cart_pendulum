@@ -150,6 +150,33 @@ cart_pendulum.cpp.s:
 	$(MAKE) -f CMakeFiles/CartPendulumSimulator.dir/build.make CMakeFiles/CartPendulumSimulator.dir/cart_pendulum.cpp.s
 .PHONY : cart_pendulum.cpp.s
 
+controller.o: controller.cpp.o
+
+.PHONY : controller.o
+
+# target to build an object file
+controller.cpp.o:
+	$(MAKE) -f CMakeFiles/CartPendulumSimulator.dir/build.make CMakeFiles/CartPendulumSimulator.dir/controller.cpp.o
+.PHONY : controller.cpp.o
+
+controller.i: controller.cpp.i
+
+.PHONY : controller.i
+
+# target to preprocess a source file
+controller.cpp.i:
+	$(MAKE) -f CMakeFiles/CartPendulumSimulator.dir/build.make CMakeFiles/CartPendulumSimulator.dir/controller.cpp.i
+.PHONY : controller.cpp.i
+
+controller.s: controller.cpp.s
+
+.PHONY : controller.s
+
+# target to generate assembly for a file
+controller.cpp.s:
+	$(MAKE) -f CMakeFiles/CartPendulumSimulator.dir/build.make CMakeFiles/CartPendulumSimulator.dir/controller.cpp.s
+.PHONY : controller.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -177,33 +204,6 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/CartPendulumSimulator.dir/build.make CMakeFiles/CartPendulumSimulator.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-rk4_integrator.o: rk4_integrator.cpp.o
-
-.PHONY : rk4_integrator.o
-
-# target to build an object file
-rk4_integrator.cpp.o:
-	$(MAKE) -f CMakeFiles/CartPendulumSimulator.dir/build.make CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.o
-.PHONY : rk4_integrator.cpp.o
-
-rk4_integrator.i: rk4_integrator.cpp.i
-
-.PHONY : rk4_integrator.i
-
-# target to preprocess a source file
-rk4_integrator.cpp.i:
-	$(MAKE) -f CMakeFiles/CartPendulumSimulator.dir/build.make CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.i
-.PHONY : rk4_integrator.cpp.i
-
-rk4_integrator.s: rk4_integrator.cpp.s
-
-.PHONY : rk4_integrator.s
-
-# target to generate assembly for a file
-rk4_integrator.cpp.s:
-	$(MAKE) -f CMakeFiles/CartPendulumSimulator.dir/build.make CMakeFiles/CartPendulumSimulator.dir/rk4_integrator.cpp.s
-.PHONY : rk4_integrator.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,12 +216,12 @@ help:
 	@echo "... cart_pendulum.o"
 	@echo "... cart_pendulum.i"
 	@echo "... cart_pendulum.s"
+	@echo "... controller.o"
+	@echo "... controller.i"
+	@echo "... controller.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... rk4_integrator.o"
-	@echo "... rk4_integrator.i"
-	@echo "... rk4_integrator.s"
 .PHONY : help
 
 
