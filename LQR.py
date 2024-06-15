@@ -8,7 +8,6 @@ pendulumMass = 0.1
 pendulumLength = .5
 g = 9.81  
 
-#TODO: fill in A/B matrices (based on linearized equations)
 A = np.array([
     [0, 0, 1, 0],
     [0, 0, 0, 1],
@@ -25,9 +24,17 @@ B = np.array([
 ])
 
 #Define the weighing matrices
-Q = np.diag([1, 1, 10, 10])
-R = np.array([[0.1]]) # I care about smooth control inputs
+Q = np.diag([1, 20, 1, 20])
+R = np.array([[.1]]) # I care about smooth control inputs
 
-K = control.lqr(A,B, Q,R) 
+K, _, _ = control.lqr(A,B, Q,R) 
 print("Gain matrix: ")
-print(K)
+print("K << ", end="")
+for i in range(K.shape[0]):
+    for j in range(K.shape[1]):
+        print(f"{K[i, j]:.8f}", end="")
+        if i == K.shape[0] - 1 and j == K.shape[1] - 1:
+            print(";", end="")
+        else:
+            print(", ", end="")
+print()
