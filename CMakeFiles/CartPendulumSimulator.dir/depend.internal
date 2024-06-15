@@ -438,6 +438,7 @@ CMakeFiles/CartPendulumSimulator.dir/main.cpp.o
  /home/mohid.khan/.local/lib/python3.8/site-packages/numpy/core/include/numpy/old_defines.h
  /home/mohid.khan/.local/lib/python3.8/site-packages/numpy/core/include/numpy/utils.h
  /home/mohid.khan/LQR_pendulum/cart_pendulum.hpp
+ /home/mohid.khan/LQR_pendulum/controller.hpp
  /home/mohid.khan/LQR_pendulum/main.cpp
  /home/mohid.khan/LQR_pendulum/matplotlibcpp.h
  /usr/include/eigen3/Eigen/Cholesky

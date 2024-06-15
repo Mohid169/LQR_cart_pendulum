@@ -437,6 +437,7 @@ CMakeFiles/CartPendulumSimulator.dir/main.cpp.o: /home/mohid.khan/.local/lib/pyt
 CMakeFiles/CartPendulumSimulator.dir/main.cpp.o: /home/mohid.khan/.local/lib/python3.8/site-packages/numpy/core/include/numpy/old_defines.h
 CMakeFiles/CartPendulumSimulator.dir/main.cpp.o: /home/mohid.khan/.local/lib/python3.8/site-packages/numpy/core/include/numpy/utils.h
 CMakeFiles/CartPendulumSimulator.dir/main.cpp.o: cart_pendulum.hpp
+CMakeFiles/CartPendulumSimulator.dir/main.cpp.o: controller.hpp
 CMakeFiles/CartPendulumSimulator.dir/main.cpp.o: main.cpp
 CMakeFiles/CartPendulumSimulator.dir/main.cpp.o: matplotlibcpp.h
 CMakeFiles/CartPendulumSimulator.dir/main.cpp.o: /usr/include/eigen3/Eigen/Cholesky

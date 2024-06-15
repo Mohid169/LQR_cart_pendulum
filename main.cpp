@@ -1,5 +1,5 @@
 #include "cart_pendulum.hpp"
-
+#include "controller.hpp"
 #include "matplotlibcpp.h"
 
 namespace plt = matplotlibcpp;
@@ -19,6 +19,7 @@ int main() {
 
     // Create CartPendulum instance
     CartPendulum system(cartMass, pendulumMass, pendulumLength);
+    Controller controller; 
 
     // Simulation parameters
     double controlForce = 0;
@@ -39,7 +40,8 @@ int main() {
     for (int i = 0; i < numSteps; ++i) {
         // Clear the previous plot
         plt::clf();
-        //compute input function controlForce = controller(system.state_objects)
+        controlForce = controller.computeControlForce(system.getStateObjects());
+        std:
         system.update(controlForce, dt);
 
         // Plot the cart
