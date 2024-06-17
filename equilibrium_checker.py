@@ -23,7 +23,6 @@ class CartPendulum:
         print("theta_accel:", theta_accel)
         return theta_accel
 
-# Example usage
 cart_mass = 1.0  # Mass of the cart
 pendulum_mass = 0.1  # Mass of the pendulum
 pendulum_length = 0.5  # Length of the pendulum
