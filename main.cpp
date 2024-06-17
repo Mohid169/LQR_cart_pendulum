@@ -24,7 +24,7 @@ int main() {
     // Simulation parameters
     double controlForce = 0;
     const double dt = 0.01;
-    const double simulationTime = 7.0;
+    const double simulationTime = 10;
 
     // Number of steps
     int numSteps = static_cast<int>(simulationTime / dt);
