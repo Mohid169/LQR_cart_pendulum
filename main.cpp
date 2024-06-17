@@ -24,7 +24,7 @@ int main() {
     // Simulation parameters
     double controlForce = 0;
     const double dt = 0.01;
-    const double simulationTime = 2.0;
+    const double simulationTime = 5.0;
 
     // Number of steps
     int numSteps = static_cast<int>(simulationTime / dt);
@@ -41,7 +41,7 @@ int main() {
         // Clear the previous plot
         plt::clf();
         controlForce = controller.computeControlForce(system.getStateObjects());
-        std:
+        
         system.update(controlForce, dt);
 
         // Plot the cart
@@ -79,8 +79,9 @@ plt::plot(pendulumStringXVec, pendulumStringYVec, "ro");
 
         // Set the animation speed
         plt::pause(0.01);
-
-       // std::cout<<system.getPendulumAngle()<<std::endl;
+        std::cout<<system.getCartPosition()<<std::endl; 
+        std::cout<<controlForce<<std::endl;
+        std::cout<<system.getPendulumAngle()<<std::endl;
     }
 
     // Display the final plot
