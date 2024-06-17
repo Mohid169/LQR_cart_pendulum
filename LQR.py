@@ -24,7 +24,7 @@ B = np.array([
 ])
 
 #Define the weighing matrices
-Q = np.diag([1, 20, 1, 20])
+Q = np.diag([1, 10, 1, 10])
 R = np.array([[.1]]) # I care about smooth control inputs
 
 K, _, _ = control.lqr(A,B, Q,R) 
