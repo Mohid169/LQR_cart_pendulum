@@ -10,7 +10,7 @@ This project simulates a cart-pendulum system using a Linear Quadratic Regulator
 
 
 ## Introduction
-The cart-pendulum system is a classic problem in control theory and dynamics. This project demonstrates how to use an LQR controller to stabilize an inverted pendulum mounted on a cart.
+The cart-pendulum system is a classic problem in control theory and dynamics. This project demonstrates how to use an LQR controller to stabilize an inverted pendulum mounted on a cart. I have three demos: slightly small theta, larger theta, and then a theta slightly smaller than 2PI to demonstrate how the controller responds to different inital conditions. I also tested my controller at x = 100, theta = 0 in which it was unsuccessful since LQR's gaurentees of stability are only local. 
 
 ## Installation
 
