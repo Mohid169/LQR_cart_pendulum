@@ -7,7 +7,7 @@ This project simulates a cart-pendulum system using a Linear Quadratic Regulator
 - [Installation](#installation)
 - [Usage](#usage)
 - [Files](#files)
-- [License](#license)
+
 
 ## Introduction
 The cart-pendulum system is a classic problem in control theory and dynamics. This project demonstrates how to use an LQR controller to stabilize an inverted pendulum mounted on a cart.
@@ -74,5 +74,4 @@ These files implement the LQR controller used to stabilize the pendulum.
 ### CMakeLists.txt
 This file contains the build configuration for CMake.
 
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
