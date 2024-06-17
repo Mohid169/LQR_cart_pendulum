@@ -9,7 +9,7 @@ const double g=9.81;
 //Constructor for CartPendulum class
 CartPendulum::CartPendulum(const double cartMass, const double pendulumMass, const double pendulumLength)
     : M(cartMass), m(pendulumMass), l(pendulumLength),
-      x(0.0), z(pendulumLength), theta(.05), x_dot(0.0), theta_dot(0.0) {}
+      x(0.0), z(pendulumLength), theta(M_PI/4), x_dot(0.0), theta_dot(0.0) {}
 
 //delete 'z' parameter, not used for anything
  
